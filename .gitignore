@@ -1,0 +1,8 @@
+*.iobj
+*.ipdb
+*.pdb
+
+bin/intermediate/
+bin/Debug/
+
+.vs/

@@ -150,7 +150,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\temp.cpp" />
+    <ClCompile Include="src\consoleController.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headers\consoleController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

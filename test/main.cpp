@@ -1,12 +1,13 @@
 #include<iostream>
-#include "math3D/vec3.h"
-
+#include "consoleController.h"
 
 int main() {
 	std::cout << "hello world\n";
-	vec3d a, b;
-	a += b;
+	consoleController::get(150,10);
+	consoleController::get()->setTitle(L"my engine");
 	
+	
+
 	system("pause");
 	return 0;
 }

@@ -55,7 +55,8 @@ void consoleController::draw(std::vector< std::vector<CHAR_INFO> >* d) {
 	draw();
 }
 
-void consoleController::draw() {
+void consoleController::draw(CHAR_INFO* Data) {
+	if (Data == nullptr)Data = data;
 	COORD bsize = { x , y };
 	COORD null = { 0 , 0 };
 	SMALL_RECT rect;
@@ -63,5 +64,5 @@ void consoleController::draw() {
 	rect.Left = 0;
 	rect.Right = x;
 	rect.Bottom = y;
-	WriteConsoleOutputA(consoleHandle, data, bsize, null, &rect);
+	WriteConsoleOutputA(consoleHandle, Data, bsize, null, &rect);
 }

@@ -28,7 +28,6 @@ public:
 	short getHeight();
 
 	void draw(std::vector< std::vector<CHAR_INFO> >* d);
-
-	void draw();
+	void draw(CHAR_INFO* Data = nullptr);
 
 };

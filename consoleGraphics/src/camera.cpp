@@ -8,7 +8,7 @@ screen::screen(short x, short y, vec3d TOPLEFT, vec3d RIGHT, vec3d DOWN) {
 	down = DOWN;
 }
 
-cam::cam(screen SCREEN, vec3d VERTEX = vec3d(0, -1, 0)) {
+cam::cam(screen SCREEN, vec3d VERTEX) {
 	sc = SCREEN;
 	vertex = VERTEX;
 }

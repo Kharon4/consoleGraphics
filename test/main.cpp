@@ -1,6 +1,7 @@
 #include<iostream>
 #include "consoleController.h"
 #include "consoleColor.h"
+#include "input.h"
 
 int main() {
 	std::cout << "hello world\n";
@@ -17,7 +18,10 @@ int main() {
 	data.push_back(Data);
 
 	consoleController::get()->draw(&data);
-
+	while (1) {
+		input::get()->update();
+		std::cout << input::get()->mouseX << " , " << input::get()->mouseY << std::endl;
+	}
 	system("pause");
 	return 0;
 }

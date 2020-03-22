@@ -153,11 +153,13 @@
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\consoleColor.cpp" />
     <ClCompile Include="src\consoleController.cpp" />
+    <ClCompile Include="src\input.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\camera.h" />
     <ClInclude Include="headers\consoleColor.h" />
     <ClInclude Include="headers\consoleController.h" />
+    <ClInclude Include="headers\input.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

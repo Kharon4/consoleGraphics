@@ -38,7 +38,7 @@ consoleController::consoleController(short X, short Y, LPCWSTR Title) {
 	SetConsoleTitle(L"ConsoleGraphics by AbhishekKhurana");
 	unsigned long long start = millis();
 	drawLogo();
-	while (millis() - start < 2000);
+	while (millis() - start < 1500);
 
 	setSize(X, Y);
 	SetConsoleTitle(title);

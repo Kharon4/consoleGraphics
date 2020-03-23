@@ -1,28 +1,27 @@
 #include<iostream>
 #include "consoleController.h"
-#include "consoleColor.h"
 #include "input.h"
+#include "renderer.h"
+#include "camera.h"
+
 
 int main() {
 	std::cout << "hello world\n";
 	consoleController::get(150, 10);
 	consoleController::get()->setTitle(L"my engine");
+	cam camera;
 	system("pause");
-	consoleController::get()->setSize(100, 15);
+	consoleController::get()->setSize(camera.sc.xPixels, camera.sc.yPixels);
 	system("pause");
 	std::vector<std::vector<CHAR_INFO>>data;
-	std::vector<CHAR_INFO> Data;
-	CHAR_INFO val;
-	for (int i = 0; i < 100; ++i){
-		val = color::getColor(i / 100.0, (100 - i) / 100.0, 0);
-		Data.push_back(val);
-	}
-	data.push_back(Data);
+	
 
+	solidCharShader sh(color::getColor(1,0,0));
+	mesh::line l(vec3d(-0.5, 1, -0.25), vec3d(0.5, 1, 0.25), &sh);
+	_globalWorld.lines.push_back(l);
+
+	data = _globalWorld.render(camera.sc, camera.vertex, color::getColor(0.75, 0.75, 0.75));
 	consoleController::get()->draw(&data);
-	while (1) {
-		input::get()->update();
-		std::cout << input::get()->mouseX << " , " << input::get()->mouseY << std::endl;
-	}
+	system("pause");
 	return 0;
 }

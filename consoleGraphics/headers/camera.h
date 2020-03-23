@@ -9,7 +9,7 @@ public:
 	short xPixels;
 	short yPixels;
 
-	screen(short x = 100, short y = 25, vec3d TOPLEFT = vec3d(-1,0,1) , vec3d RIGHT = vec3d(2,0,0) , vec3d DOWN = vec3d(0,0,-2 ));
+	screen(short x = 100, short y = 40, vec3d TOPLEFT = vec3d(-1,0,1) , vec3d RIGHT = vec3d(2,0,0) , vec3d DOWN = vec3d(0,0,-2 ));
 
 };
 

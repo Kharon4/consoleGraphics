@@ -161,6 +161,7 @@
     <ClInclude Include="headers\consoleColor.h" />
     <ClInclude Include="headers\consoleController.h" />
     <ClInclude Include="headers\input.h" />
+    <ClInclude Include="headers\mesh.h" />
     <ClInclude Include="headers\shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

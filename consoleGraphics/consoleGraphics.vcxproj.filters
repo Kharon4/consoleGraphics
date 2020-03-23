@@ -47,5 +47,8 @@
     <ClInclude Include="headers\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

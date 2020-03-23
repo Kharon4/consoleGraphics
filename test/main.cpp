@@ -7,7 +7,9 @@ int main() {
 	std::cout << "hello world\n";
 	consoleController::get(150, 10);
 	consoleController::get()->setTitle(L"my engine");
-
+	system("pause");
+	consoleController::get()->setSize(100, 15);
+	system("pause");
 	std::vector<std::vector<CHAR_INFO>>data;
 	std::vector<CHAR_INFO> Data;
 	CHAR_INFO val;
@@ -22,6 +24,5 @@ int main() {
 		input::get()->update();
 		std::cout << input::get()->mouseX << " , " << input::get()->mouseY << std::endl;
 	}
-	system("pause");
 	return 0;
 }

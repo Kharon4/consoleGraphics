@@ -12,6 +12,8 @@ private:
 	HANDLE consoleHandle;
 	CHAR_INFO *data;
 	
+	void drawLogo();
+
 	consoleController(short X, short Y, LPCWSTR Title);
 	~consoleController();
 public:

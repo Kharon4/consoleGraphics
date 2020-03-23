@@ -1,5 +1,7 @@
 #include "consoleController.h"
 #include<chrono>
+#include <fstream>
+
 
 uint64_t millis() {
 	uint64_t ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::
@@ -8,7 +10,21 @@ uint64_t millis() {
 }
 
 void consoleController::drawLogo() {
+	std::vector<std::vector<CHAR_INFO>>dataT;
+	std::ifstream file("startupLogo.bin", std::ios::in | std::ios::binary);
+	short size;
+	file.read((char*)&size, sizeof(short));
+	std::vector<CHAR_INFO> temp;
+	for (int i = 0; i < size; ++i)temp.push_back(CHAR_INFO());
+	file.read((char*)&size, sizeof(short));
+	for (int i = 0; i < size; ++i)dataT.push_back(temp);
 
+	for(int i = 0 ; i < dataT.size() ; ++i)
+		for (int j = 0; j < dataT[0].size(); ++j)
+			file.read((char*)&(dataT[i][j]), sizeof(CHAR_INFO));
+
+	setSize(dataT[0].size(), dataT.size());
+	draw(&dataT);
 }
 
 consoleController* consoleController::obj = nullptr;
@@ -19,6 +35,11 @@ consoleController::consoleController(short X, short Y, LPCWSTR Title) {
 	title = Title;
 	consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 	data = nullptr;
+	SetConsoleTitle(L"ConsoleGraphics by AbhishekKhurana");
+	unsigned long long start = millis();
+	drawLogo();
+	while (millis() - start < 2000);
+
 	setSize(X, Y);
 	SetConsoleTitle(title);
 	data = new CHAR_INFO[x * ((long)y)];
